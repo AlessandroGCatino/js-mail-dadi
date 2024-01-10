@@ -9,6 +9,9 @@ addButton.addEventListener("click", aggiungiMail)
 
 const mailOut = document.getElementById("mailOutput")
 
+let hint = 0
+const hintMessage = "Prova una di queste:"
+
 const listaMail = ["prova@gmail.com", "mail@gmail.com", "mailreale@gmail.com", "placeholder@mail.com", "test@mail.it"]
 
 
@@ -42,13 +45,26 @@ function throwDice(){
 
 function controllaMail(){
     let mailUtente = document.getElementById("userMail").value
+    let checkHint = true
     for (let i=0; i < listaMail.length; i++){
         if(mailUtente == listaMail[i]){
             mailOut.innerHTML = "Mail trovata"
+            checkHint=false
+            i=listaMail.length
         } else {
             mailOut.innerHTML = "Mail non presente"
         }
     }
+    if(checkHint){
+        hint++
+    }
+    if(hint>3){
+        document.getElementById("hintOut").innerHTML = hintMessage
+        for(let i=0; i<listaMail.length; i++){
+            document.getElementById("hintOut").innerHTML += `<li>${listaMail[i]}</li>`
+        }
+    }
+
 }
 
 function aggiungiMail(){

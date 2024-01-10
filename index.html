@@ -7,6 +7,8 @@
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
 
+    <style> li {list-style-type: none;} </style>
+
 </head>
 <body>
 
@@ -33,7 +35,7 @@
     
     <h1 class="text-center mt-5">Controllo Mail</h1>
 
-    <div class="text-center">
+    <div class="text-center container">
 
         <input id="userMail" type="email" placeholder="Inserisci qui la mail...">
         <div class="my-3 d-flex justify-content-center gap-4">
@@ -41,6 +43,7 @@
             <button id="add" class="btn btn-success">Add</button>
         </div>
         <h1 id="mailOutput"></h1>
+        <ul id="hintOut"></ul>
     </div>
     
     <script src="./main.js"></script>
